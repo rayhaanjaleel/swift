@@ -38,7 +38,9 @@ public class Instruction : ListNode, CustomStringConvertible, Hashable {
   final public var function: Function { block.function }
 
   final public var description: String {
-    String(_cxxString: SILNode_debugDescription(bridgedNode))
+//    printStrSize()
+    let x = std.string()
+    return String(_cxxString: SILNode_debugDescription(bridgedNode))
   }
 
   final public var operands: OperandArray {

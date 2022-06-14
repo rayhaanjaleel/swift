@@ -332,7 +332,12 @@ SwiftInt SILArgument_isExclusiveIndirectParameter(BridgedArgument argument) {
 static_assert(BridgedOperandSize == sizeof(Operand),
               "wrong bridged Operand size");
 
+void printStrSize() {
+  llvm::errs() << "sizeof " << sizeof(std::string) << "\n";
+}
+
 std::string SILNode_debugDescription(BridgedNode node) {
+//  printStrSize();
   std::string str;
   llvm::raw_string_ostream os(str);
   castToSILNode(node)->print(os);
